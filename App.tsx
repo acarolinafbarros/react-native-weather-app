@@ -3,16 +3,17 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, Store } from 'redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore, persistReducer } from 'redux-persist';
+import { PersistPartial } from 'redux-persist/es/persistReducer';
 import { reducers } from './src/redux/reducers';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import thunk from 'redux-thunk';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import HomeScreen from './src/navigation/screens/Home/HomeScreen';
 import DetailsScreen from './src/navigation/screens/Details/DetailsScreen';
 import { CardAction, DispatchType, FavoriteState } from './src/redux/types';
-import { PersistPartial } from 'redux-persist/es/persistReducer';
 import {
   ForecastState,
   WeatherState,
