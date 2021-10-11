@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { View, Text, Image, Pressable, Animated} from 'react-native';
+import { View, Text, Image, Pressable, Animated } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
 import { Add } from '../Icons/Add';
 import { CardProps } from './Card.types';
@@ -22,19 +22,20 @@ export const Card: FunctionComponent<CardProps> = ({
     return (
       <>
         {isFavorite && removeFavoriteCb && (
-          <Pressable 
-            testID="card-trash-icon" 
+          <Pressable
+            testID="card-trash-icon"
             style={styles.deleteContainer}
-            onPress={() => removeFavoriteCb({ id: weatherData.cityId })}>
+            onPress={() => removeFavoriteCb({ id: weatherData.cityId })}
+          >
             <Trash height={30} />
-          </Pressable>  
+          </Pressable>
         )}
-      </>   
-  )};
+      </>
+    );
+  };
 
   return (
-    <Swipeable
-      renderRightActions={deleteCard}>
+    <Swipeable renderRightActions={deleteCard}>
       <View testID="card" style={cardStyles}>
         {!isFavorite && addFavoriteCb && (
           <Pressable
